@@ -1,0 +1,13 @@
+{% extends "patient/base.html" %}
+
+{% block title %}Patient List{% endblock %}
+
+{% block content %}
+    <h2>Patient List</h2>
+    <ul>
+        {% for patient in patients %}
+            <li>{{ patient.first_name }} {{ patient.last_name }}<a href="{% url 'patient_detail' patient.pk %}"class="btn btn-light">Details</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'patient_create' %}" class="btn btn-primary">Add New Patient</a>
+{% endblock %}

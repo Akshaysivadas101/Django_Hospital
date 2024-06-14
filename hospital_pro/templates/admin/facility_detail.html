@@ -1,0 +1,12 @@
+{% extends "admin/base_generic.html" %}
+
+{% block title %}Facility Detail{% endblock %}
+
+{% block content %}
+    <h2>Facility Detail</h2>
+    <p>Name: {{ facility.name }}</p>
+    <p>Location: {{ facility.location }}</p>
+    <p>Departments: {{ facility.departments }}</p>
+    <a href="{% url 'facility_delete' facility.pk %}" type="submit" class="btn btn-danger">Delete</a>
+    <a href="{% url 'facility_list' %}"class="btn btn-secondary">Back to List</a>
+{% endblock %}

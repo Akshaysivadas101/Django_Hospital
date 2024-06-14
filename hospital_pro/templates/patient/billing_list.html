@@ -1,0 +1,13 @@
+{% extends "patient/base.html" %}
+
+{% block title %}Billing List{% endblock %}
+
+{% block content %}
+    <h2>Billing List</h2>
+    <ul>
+        {% for billing in billings %}
+            <li><a href="{% url 'billing_detail' billing.pk %}">{{ billing.patient.first_name }}</a> - ${{ billing.amount }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'billing_create' %}"class="btn btn-primary">Create Billing Record</a>
+{% endblock %}

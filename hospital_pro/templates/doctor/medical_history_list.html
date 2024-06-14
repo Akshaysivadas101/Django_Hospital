@@ -1,0 +1,13 @@
+{% extends "doctor/base.html" %}
+
+{% block title %}Medical History List{% endblock %}
+
+{% block content %}
+    <h2>Medical History List</h2>
+    <ul>
+        {% for history in histories %}
+            <li><a href="{% url 'medical_history_detail' history.pk %}">{{ history.patient.first_name }}</a></li>
+        {% endfor %}
+    </ul>
+    
+{% endblock %}

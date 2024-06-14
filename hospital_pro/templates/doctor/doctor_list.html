@@ -1,0 +1,13 @@
+{% extends "doctor/base.html" %}
+
+{% block title %}Doctor List{% endblock %}
+
+{% block content %}
+    <h2>Doctor List</h2>
+    <ul>
+        {% for doctor in doctors %}
+            <li><a href="{% url 'doctor_detail' doctor.pk %}">{{ doctor.doctor_name }}</a> - {{ doctor.specialty }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'doctor_create' %}"class="btn btn-primary">Add New Doctor</a>
+{% endblock %}

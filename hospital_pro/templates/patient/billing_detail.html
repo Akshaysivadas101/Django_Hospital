@@ -1,0 +1,14 @@
+{% extends "patient/base.html" %}
+
+{% block title %}Billing Detail{% endblock %}
+
+{% block content %}
+    <h2>Billing Detail</h2>
+    <p>Patient: {{ billing.patient.first_name }}</p>
+    <p>Statement: {{ billing.statement }}</p>
+    <p>Amount: ${{ billing.amount }}</p>
+    <p>Paid: {{ billing.paid }}</p>
+    <p>Insurance Info: {{ billing.insurance_info }}</p>
+    <p>Due Date: {{ billing.due_date }}</p>
+    <a href="{% url 'billing_list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}

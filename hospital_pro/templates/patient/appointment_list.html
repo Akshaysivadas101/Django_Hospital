@@ -1,0 +1,13 @@
+{% extends "patient/base.html" %}
+
+{% block title %}Appointment List{% endblock %}
+
+{% block content %}
+    <h2>Appointment List</h2>
+    <ul>
+        {% for appointment in appointments %}
+            <li><a href="{% url 'patient_appointment_detail' appointment.pk %}">{{ appointment.patient.first_name }} - {{ appointment.doctor.doctor_name }}</a> - {{ appointment.date }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'appointment_create' %}" class="btn btn-primary">Schedule New Appointment</a>
+{% endblock %}

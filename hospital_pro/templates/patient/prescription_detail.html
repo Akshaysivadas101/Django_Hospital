@@ -1,0 +1,15 @@
+{% extends "patient/base.html" %}
+
+{% block title %}Prescription Detail{% endblock %}
+
+{% block content %}
+    <h2>Prescription Detail</h2>
+    <p>Patient: {{ prescription.patient.first_name }}</p>
+    <p>Doctor: {{ prescription.doctor.doctor_name }}</p>
+    <p>Date: {{ prescription.date_prescribed }}</p>
+    <p>Medicines: {{ prescription.medication }}</p>
+    <p>Dosage: {{ prescription.dosage }}</p>
+    <p>Instructions: {{ prescription.instructions }}</p>
+    
+    <a href="{% url 'patient_prescription_list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}

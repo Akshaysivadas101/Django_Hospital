@@ -1,0 +1,13 @@
+{% extends "doctor/base.html" %}
+
+{% block title %}Prescription List{% endblock %}
+
+{% block content %}
+    <h2>Prescription List</h2>
+    <ul>
+        {% for prescription in prescriptions %}
+            <li><a href="{% url 'prescription_detail' prescription.pk %}">{{ prescription.patient.first_name }} - {{ prescription.doctor.doctor_name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_prescription' %}" class="btn btn-primary">Prescribe Medicals</a>
+{% endblock %}

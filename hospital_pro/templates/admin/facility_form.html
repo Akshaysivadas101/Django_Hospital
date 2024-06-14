@@ -1,0 +1,13 @@
+{% extends "admin/base_generic.html" %}
+
+{% block title %}Add/Edit Facility{% endblock %}
+
+{% block content %}
+    <h2>Add/Edit Facility</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit"class="btn btn-success">Save</button>
+    </form>
+    <a href="{% url 'facility_list' %}"class="btn btn-secondary">Back to List</a>
+{% endblock %}

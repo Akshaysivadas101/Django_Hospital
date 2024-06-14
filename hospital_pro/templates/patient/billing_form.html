@@ -1,0 +1,29 @@
+{% extends "patient/base.html" %}
+
+{% comment %} {% extends "patient/base.html" %}
+
+{% block title %}Create Billing Record{% endblock %}
+
+{% block content %}
+    <h2>Create Billing Record</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+    <a href="{% url 'billing_list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %} {% endcomment %}
+
+
+
+{% block title %}Billing{% endblock %}
+
+{% block content %}
+  <h2>Billing Information</h2>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}
+

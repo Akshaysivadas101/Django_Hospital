@@ -1,0 +1,15 @@
+{% extends "doctor/base.html" %}
+
+{% block title %}Appointment Detail{% endblock %}
+
+{% block content %}
+    <h2>Appointment Detail</h2>
+    <p>Patient: {{ appointment.patient.first_name }}</p>
+    <p>Doctor: {{ appointment.doctor.doctor_name }}</p>
+    <p>Date: {{ appointment.date }}</p>
+    <p>Reason: {{ appointment.reason }}</p>
+
+    
+    
+    <a href="{% url 'doctor_appointment_list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}
